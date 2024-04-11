@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.com"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="template" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Index page</title>
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/5.3.3/css/bootstrap.min.css"/>
+    <script src="webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+<div layout:fragment="content">
+    <div class="container" align="center">
+        <form action="/ajouterOnce" method="post">
+            <div class="mb-3">
+                <label for="name" class="form-label">name</label>
+                <input type="text" class="form-control w-50" id="name" name="name">
+                <span class="text-danger"  th:errors="${video.name}"></span>
+            </div>
+            <div class="mb-3">
+                <label for="Description" class="form-label">Designation</label>
+                <textarea class="form-control w-50" id="Description" name="Description" maxlength="100"></textarea>
+                <span class="text-danger"  th:errors="${video.Description}"></span>
+            </div>
+            <div class="mb-3">
+                <label for="url" class="form-label">url</label>
+                <input type="text" class="form-control w-50" id="url" name="url">
+                <span class="text-danger" th:errors="${video.url}"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary form-control w-50" value="Ajouter">Ajouter</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

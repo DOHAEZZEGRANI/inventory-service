@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>Index page</title>
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/5.3.3/css/bootstrap.min.css"/>
+</head>
+<body>
+
+<p th:text="${videoWithDetails.getId()}" ></p>
+<p th:text="${videoWithDetails.getName()}" ></p>
+<p th:text="${videoWithDetails.getUrl()}" ></p>
+<p th:text="${videoWithDetails.getDescription()}" ></p>
+<p th:text="${videoWithDetails.getDate()}" ></p>
+<p th:text="${videoWithDetails.getCreator()}" ></p>
+
+<a th:href="@{/index}" >Index</a>
+
+
+</body>
+</html>

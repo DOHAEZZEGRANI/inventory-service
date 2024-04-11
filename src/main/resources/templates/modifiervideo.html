@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Modifier Vidéo</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}" />
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header">Modifier Vidéo</div>
+        <div class="card-body">
+            <form th:action="@{/ajouter}" method="post">
+                <input type="hidden" name="id" th:value="${videoToBeUpdated.id}" />
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nom:</label>
+                    <input type="text" class="form-control" id="name" name="name" th:value="${videoToBeUpdated.name}" required />
+                </div>
+                <div class="mb-3">
+                    <label for="designation" class="form-label">Désignation:</label>
+                    <input type="text" class="form-control" id="designation" name="designation" th:value="${videoToBeUpdated.description}" required />
+                </div>
+                <div class="mb-3">
+                    <label for="url" class="form-label">URL:</label>
+                    <input type="text" class="form-control" id="url" name="url" th:value="${videoToBeUpdated.url}" required />
+                </div>
+                <button type="submit" class="btn btn-primary">Modifier</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
